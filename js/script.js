@@ -3,19 +3,19 @@
  *****************************************************/
 
 var app = new Vue({
-    
+
     el: '#boolzapp',
 
     data: {
         // Account personale utente
         user: {
-            name: 'Nome Utente',
+            name: 'Cristian Gardosi',
             avatar: '_io'
         },
         // Elenco contatti
         contacts: [
             {
-                name: 'Michele',
+                name: 'Richi',
                 avatar: '_1',
                 visible: true,
                 messages: [
@@ -37,7 +37,7 @@ var app = new Vue({
                 ],
             },
             {
-                name: 'Fabio',
+                name: 'Benjo',
                 avatar: '_2',
                 visible: true,
                 messages: [
@@ -59,7 +59,7 @@ var app = new Vue({
                 ],
             },
             {
-                name: 'Samuele',
+                name: 'Artu',
                 avatar: '_3',
                 visible: true,
                 messages: [
@@ -81,7 +81,7 @@ var app = new Vue({
                 ],
             },
             {
-                name: 'Luisa',
+                name: 'Moa',
                 avatar: '_4',
                 visible: true,
                 messages: [

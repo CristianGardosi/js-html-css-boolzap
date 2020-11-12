@@ -32,7 +32,7 @@ body {
 }
 
 p {
-    font-size: 18px;
+    font-size: 16px;
     color: #2f373d;
 }
 
@@ -65,17 +65,48 @@ i:hover {
     display: flex;
     /* Gestione elementi interni in direzione verticale */
     flex-direction: column;
-    background: maroon;
 }
 
 .user-info {
     flex-basis: 10%;
-    background: PURPLE;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    background :#edeeec;
+    border-right: 1px solid #bbbbbb;
+
+}
+
+.user-bio {
+    display: flex;
+    align-items: center;
+}
+
+.contact-img  {
+    margin-right: 10px;
 }
 
 .notification-setting {
     flex-basis: 15%;
-    background: orange;
+    display: flex;
+    align-items: center;
+    background: #92dcf7;
+}
+
+.notification-setting i{
+    color: #92dcf7;
+    background-color: #fff;
+    border-radius: 100%;
+    padding: 15px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.notification-info a {
+    font-size: 12px;
+    color: #868686;
 }
 
 .sidebar-searchbar {
@@ -88,6 +119,39 @@ i:hover {
     background: pink;
 }
 
+/* Search bar */
+.sidebar-searchbar {
+    background: #edeeec;
+    text-align: center;
+}
+
+.search-account {
+    width: 95%;
+    height: 35px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background: rgba(255,255,255, .7); 
+    border: 0;
+    outline: 0;
+    transition: background .2s;
+}
+
+/* Contact list */
+.contact-list {
+    margin-top: 10px;
+    background: #fff;
+}
+
+.contact-list ul li {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #bbbbbb;
+}
+
+
 /* MAIN MESSAGE AREA */
 .main-content-message {
     flex-basis: 65%;
@@ -99,6 +163,7 @@ i:hover {
 
 /* Main header */
 .main-header {
+    flex-basis: 10%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -160,6 +225,8 @@ i:hover {
     outline: 0;
     transition: background .2s;
 }
+
+
 
 
 
