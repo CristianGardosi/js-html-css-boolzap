@@ -23,12 +23,13 @@
 
         <!-- APP SIDEBAR SECTION  -->
         <aside class="sidebar">
+
             <!-- User name and info area -->
             <section class="user-info">
                 <div class="user-bio">
-                    <img class="contact-img" src="./img/avatar_2.jpg" alt="Michele"> 
+                    <img class="contact-img" src="./img/avatar_io.jpg" alt="Michele"> 
                     <div class="user-name">
-                        <p>Cristian Gardosi</p>
+                        <p>{{ user.name }}</p>
                     </div>
                 </div>
                 <div class="header-icons">
@@ -37,6 +38,7 @@
                     <a href="#"><i class="fas fa-ellipsis-v"></i></a>
                 </div>
             </section>
+
             <!-- Notification settings -->
             <section class="notification-setting">
                 <a href="#"><i class="fas fa-bell-slash"></i></a>
@@ -45,34 +47,40 @@
                     <a href="#">Ricevi notifiche deckstop</a>
                 </div>
             </section>
+
             <!-- Searchbar -->
             <section class="sidebar-searchbar">
                 <div class="text-input-bar">
                     <input type="text" class="search-account" placeholder=" Cerca o inizia una nuova chat">
                 </div>
             </section>
+
             <!-- Contact list -->
             <section class="contact-list">
+                <!-- Per creare la mia lista contatti itero con v-for sull'array che ho nei miei data vue-js -->
                 <ul>
-                    <li>
-                        <img class="contact-img" src="./img/avatar_2.jpg" alt="Michele"> 
+                    <li v-for="contact in contacts">
+                        <img class="contact-img" src="./img/avatar_1.jpg" alt="Michele"> 
                         <div class="user-name">
-                            <p>Cristian Gardosi</p>
+                            <!-- Estrapolo il valore name dalla mia lista contatti -->
+                            <p> {{ contact.name }} </p>
                         </div>
                     </li>
                 </ul>
             </section>
         </aside>
 
+
         <!-- APP MAIN MESSAGE SECTION -->
         <main class="main-content-message">
+
             <!-- Contact name and info area -->
             <section class="main-header">
                 <div class="contact-bio">
                     <img class="contact-img" src="./img/avatar_1.jpg" alt="Michele"> 
                     <div class="name-access">
-                        <p>Michele</p>
-                        <span>Ultimo accesso alle ore 10:57</span>
+                        <p>Richi</p>
+                        <span>Ultimo accesso alle ore 04:20</span>
                     </div>
                 </div>
                 <div class="header-icons">
@@ -81,9 +89,11 @@
                     <a href="#"><i class="fas fa-ellipsis-v"></i></a>
                 </div>
             </section>
+
             <!-- Text message area -->
             <section class="main-message-area">
             </section>
+
             <!-- Writing text area -->
             <section class="main-footer">
                 <a href="#"><i class="far fa-smile-wink"></i></a>
@@ -93,7 +103,7 @@
                 <a href="#"><i class="fas fa-microphone-alt"></i></a>
             </section>
         </main>
-
+        
     </div>
 
     <!-- JS -->

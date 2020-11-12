@@ -26,11 +26,12 @@ body {
 
 /* UTILITY CLASSES */
 
+/* Sizing and styles avatar */
 .contact-img {
     border-radius: 100%;
     max-width: 45px;
 }
-
+/* Typhography */
 p {
     font-size: 16px;
     color: #2f373d;
@@ -61,16 +62,16 @@ i:hover {
 
 /* SIDEBAR */
 .sidebar {
-    flex-basis: 35%;
+    flex-basis: 40%;
     display: flex;
     /* Gestione elementi interni in direzione verticale */
     flex-direction: column;
 }
 
+/* User info area */
 .user-info {
     flex-basis: 10%;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 5px 10px;
@@ -88,6 +89,7 @@ i:hover {
     margin-right: 10px;
 }
 
+/* Notification settings area */
 .notification-setting {
     flex-basis: 15%;
     display: flex;
@@ -109,18 +111,9 @@ i:hover {
     color: #868686;
 }
 
+/* Searchbar area */
 .sidebar-searchbar {
     flex-basis: 7%;
-    background: grey;
-}
-
-.contact-list {
-    flex-grow: 1;
-    background: pink;
-}
-
-/* Search bar */
-.sidebar-searchbar {
     background: #edeeec;
     text-align: center;
 }
@@ -139,6 +132,7 @@ i:hover {
 
 /* Contact list */
 .contact-list {
+    flex-grow: 1;
     margin-top: 10px;
     background: #fff;
 }
@@ -151,21 +145,23 @@ i:hover {
     border-bottom: 1px solid #bbbbbb;
 }
 
+.contact-list li:last-child {
+    border-bottom: none;
+}
+
 
 /* MAIN MESSAGE AREA */
 .main-content-message {
-    flex-basis: 65%;
+    flex-basis: 60%;
     display: flex;
     /* Gestione elementi interni in direzione verticale */
     flex-direction: column;
-    background: aqua;
 }
 
 /* Main header */
 .main-header {
     flex-basis: 10%;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 5px 10px;
@@ -209,6 +205,11 @@ i:hover {
 
 .main-footer i {
     color: #868686;
+    transition: color, .2s
+}
+
+.main-footer i:hover {
+    color: #009788
 }
 
 .text-input-bar {
