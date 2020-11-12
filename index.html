@@ -60,7 +60,10 @@
                 <!-- Per creare la mia lista contatti itero con v-for sull'array che ho nei miei data vue-js -->
                 <ul>
                     <li v-for="contact in contacts">
-                        <img class="contact-img" src="./img/avatar_1.jpg" alt="Michele"> 
+                        <!-- Con questo metodo concateno la parte di src statica a quella dinamica presente nel mio array Vue e che collega alle varie immagini associate ai diversi account -->
+                        <img class="contact-img" 
+                        v-bind:src= " './img/avatar' + contact.avatar + '.jpg' " 
+                        alt="Michele"> 
                         <div class="user-name">
                             <!-- Estrapolo il valore name dalla mia lista contatti -->
                             <p> {{ contact.name }} </p>
@@ -103,7 +106,7 @@
                 <a href="#"><i class="fas fa-microphone-alt"></i></a>
             </section>
         </main>
-        
+
     </div>
 
     <!-- JS -->
