@@ -8,5 +8,158 @@
 
 body {
     font-family: 'Noto Sans KR', sans-serif;
-    
+    height: 100vh;
+    /* Gestione sfondo posteriore al container dell'app con grandezza 100% della vh */
+    background-image: linear-gradient(
+        to bottom,
+        #009788 0%,
+        #009788 20%,
+        #d5dbd9 20%,
+        #d5dbd9 100%
+    );
+    /* Flex per posizionare il container dell'app al centro dello schermo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
+/* UTILITY CLASSES */
+
+.contact-img {
+    border-radius: 100%;
+    max-width: 45px;
+}
+
+p {
+    font-size: 18px;
+    color: #2f373d;
+}
+
+i {
+    font-size: 22px;
+    color: #bbbbbb;
+    transition: color, .2s ;
+}
+
+i:hover {
+    color: #868686;
+}
+
+
+/* LAYOUT APP */
+
+/* Container intera app */
+.app-container {
+    display: flex;
+    width: 80%;
+    height: 90%;
+    background: #fff;
+    /* Essendo un applicativo specificatamente pensato per il web non voglio scendere sotto i 900px di grandezza per quanto concerne l'intero app-container */
+    min-width: 900px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    flex-basis: 35%;
+    display: flex;
+    /* Gestione elementi interni in direzione verticale */
+    flex-direction: column;
+    background: maroon;
+}
+
+.user-info {
+    flex-basis: 10%;
+    background: PURPLE;
+}
+
+.notification-setting {
+    flex-basis: 15%;
+    background: orange;
+}
+
+.sidebar-searchbar {
+    flex-basis: 7%;
+    background: grey;
+}
+
+.contact-list {
+    flex-grow: 1;
+    background: pink;
+}
+
+/* MAIN MESSAGE AREA */
+.main-content-message {
+    flex-basis: 65%;
+    display: flex;
+    /* Gestione elementi interni in direzione verticale */
+    flex-direction: column;
+    background: aqua;
+}
+
+/* Main header */
+.main-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    background :#edeeec;
+}
+
+.contact-bio {
+    display: flex;
+    align-items: center;
+}
+
+.contact-bio img {
+    margin-right: 10px;
+}
+
+.name-access span {
+    font-size: 10px;
+    color: #868686;
+}
+
+.header-icons i {
+    padding: 0 5px;
+}
+
+/* Message area */
+.main-message-area {
+    flex-grow: 1;
+    /* Gestione barra di scorrimento verticale qualora i messaggi superassero l'altezza di visione interna al container */
+    overflow-y: auto;
+    background-image: url('../img/mine.jpg');
+}
+
+/* Insert text area */
+.main-footer {
+    flex-basis: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #edeeec;
+}
+
+.main-footer i {
+    color: #868686;
+}
+
+.text-input-bar {
+    flex-basis: 80%;
+}
+
+.text-bar {
+    width: 100%;
+    height: 45px;
+    padding: 7px;
+    border-radius: 5px;
+    background: rgba(255,255,255, .7); 
+    border: 0;
+    outline: 0;
+    transition: background .2s;
+}
+
+
+
