@@ -29,7 +29,7 @@
                 <div class="user-bio">
                     <img class="contact-img" src="./img/avatar_io.jpg" alt="Michele"> 
                     <div class="user-name">
-                        <p>{{ user.name }}</p>
+                        <p> {{ user.name }} </p>
                     </div>
                 </div>
                 <div class="header-icons">
@@ -51,7 +51,8 @@
             <!-- Searchbar -->
             <section class="sidebar-searchbar">
                 <div class="text-input-bar">
-                    <input type="text" class="search-account" placeholder=" Cerca o inizia una nuova chat">
+                    <a href="#"><i class="fas fa-search search-chat"></i></a>
+                    <input type="text" class="search-account" placeholder="Cerca o inizia una nuova chat">
                 </div>
             </section>
 
@@ -63,7 +64,7 @@
                         <!-- Con questo metodo concateno la parte di src statica a quella dinamica presente nel mio array Vue e che collega alle varie immagini associate ai diversi account -->
                         <img class="contact-img" 
                         v-bind:src= " './img/avatar' + contact.avatar + '.jpg' " 
-                        alt="Michele"> 
+                        alt=""> 
                         <div class="user-name">
                             <!-- Estrapolo il valore name dalla mia lista contatti -->
                             <p> {{ contact.name }} </p>
