@@ -162,10 +162,13 @@ i:hover {
     cursor: pointer;
 }
 
-.sidebar .contact-list ul li:hover,
-contact-focus {
+.sidebar .contact-list ul li:hover {
     background: #edeeec;
 } 
+
+.sidebar .contact-list ul li:active {
+    background: #edeeec;
+}
 
 .sidebar.contact-list li:last-child {
     border-bottom: none;
@@ -191,7 +194,7 @@ contact-focus {
     color: #868686;
 }
 
-.main-header .header-icons i {
+.header-icons i {
     padding: 0 5px;
 }
 
@@ -211,7 +214,7 @@ contact-focus {
     width: 100%;
     overflow-y: auto;
 }
-  /* Gestione elementi all'interno della 'nuvoletta' */
+  /* Gestione elementi all'interno della 'nuovoletta' */
 .text-message {
     display: flex;
     align-items: center;
