@@ -166,8 +166,8 @@ i:hover {
     background: #edeeec;
 } 
 
-.sidebar .contact-list ul li:active {
-    background: #edeeec;
+.sidebar .contact-list ul li.active {
+    background: #bbbbbb;
 }
 
 .sidebar.contact-list li:last-child {
@@ -262,11 +262,11 @@ i:hover {
     color: #009788
 }
 
-.text-input-bar {
+.main-footer .text-input-bar {
     flex-basis: 80%;
 }
 
-.text-bar {
+.text-input-bar .text-bar {
     width: 100%;
     height: 45px;
     padding: 7px;
