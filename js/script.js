@@ -59,11 +59,6 @@ var app = new Vue({
                         date: '20/03/2020 16:30:55',
                         message: 'Bene grazie! Stasera ci vediamo?',
                         status: 'received'
-                    },
-                    {
-                        date: '20/03/2020 16:35:00',
-                        message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'received'
                     }
                 ],
             },
@@ -106,11 +101,31 @@ var app = new Vue({
                     }
                 ],
             },
+            {
+                name: 'Il pres',
+                avatar: '_5',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Ho voglia di giocare a calcio peccato sia chiusa la polisportiva',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Anchio, ma se vuoi possiamo andare a correre',
+                        status: 'received'
+                    }
+                ],
+            },
         ]
     },
 
     methods: {
-
+        // Funzione per associare alla variabile indexContact l'index effettivo degli elementi dell'array
+        setIndex(index) {
+            this.indexContact = index;
+        },
 
     }
 
