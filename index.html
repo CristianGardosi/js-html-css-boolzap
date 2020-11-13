@@ -14,12 +14,16 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- VUE -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
     <title>BOOLZAP WEB</title>
+    
 </head>
 
 <body>
+
     <!-- MAIN APP CONTAINER -->
     <div id="boolzapp" class="app-container">
+
 
         <!-- APP SIDEBAR SECTION  -->
         <aside class="sidebar">
@@ -27,7 +31,9 @@
             <!-- User name and info area -->
             <section class="user-info">
                 <div class="user-bio">
-                    <img class="contact-img" src="./img/avatar_io.jpg" alt="Michele"> 
+                    <!-- Sintassi 1 (vanilla js) per collegare src al valore che mi serve all'interno del mio array -->
+                    <img class="contact-img" 
+                    v-bind:src=" './img/avatar' + user.avatar + '.jpg'" alt="user"> 
                     <div class="user-name">
                         <p> {{ user.name }} </p>
                     </div>
@@ -58,12 +64,12 @@
 
             <!-- Contact list -->
             <section class="contact-list">
-                <!-- Per creare la mia lista contatti itero con v-for sull'array che ho nei miei data vue-js -->
                 <ul>
-                    <li v-for="contact in contacts">
-                        <!-- Con questo metodo concateno la parte di src statica a quella dinamica presente nel mio array Vue e che collega alle varie immagini associate ai diversi account -->
+                    <!-- Itero con v-for sui contatti (contacts) per strapolarne valore ed index, associo la funzione @click ai contatti nella lista che assegna alla mia variabile inizialmente vuota indexContact (nei data di Vue) il valore di index del contatto di volta in volta cliccato -->
+                    <li v-for="(contact, index) in contacts" @click="indexContact = index">
+                        <!-- Sintassi 2 (interpolazione di stringhe) per collegare src al valore che mi serve all'interno del mio array -->
                         <img class="contact-img" 
-                        v-bind:src= " './img/avatar' + contact.avatar + '.jpg' " 
+                        v-bind:src= " `./img/avatar${contact.avatar}.jpg` " 
                         alt=""> 
                         <div class="user-name">
                             <!-- Estrapolo il valore name dalla mia lista contatti -->
@@ -81,9 +87,10 @@
             <!-- Contact name and info area -->
             <section class="main-header">
                 <div class="contact-bio">
-                    <img class="contact-img" src="./img/avatar_1.jpg" alt="Michele"> 
+                    <!-- Per fare in modo di avere l'immagine ed il nome dell'account che di volta in volta clicco dalla mia lista contatti, utilizzo una sintassi di interpolazione in cui la parte dinamica è data dalla variabile indexContact che si aggiorna ad ogni click su un utente diverso .avatar quando voglio la foto e .name quando invece voglio l'username del contatto -->
+                    <img class="contact-img" v-bind:src="`./img/avatar${contacts[indexContact].avatar}.jpg`" alt="user avatar"> 
                     <div class="name-access">
-                        <p>Richi</p>
+                        <p>{{ contacts[indexContact].name }}</p>
                         <span>Ultimo accesso alle ore 04:20</span>
                     </div>
                 </div>
@@ -96,6 +103,14 @@
 
             <!-- Text message area -->
             <section class="main-message-area">
+                <!-- Creo un ulterio container interno al container di sezione principale in modo da gestirmi il padding in maniera veloce e semplice creando una sorta di cornice per i miei messaggi -->
+                <div class="chat-area">
+                    <!-- Similarmente a come fatto quando volevo inserire foto/nome dell'user nella main-header in alto, itero sui messagge all'interno di contacts tenendo sempre conto della variabile indexContact in modo che ad ogni utente corrispondano solo e soltanto la sua chat specifica, richiamo poi i valori che mi servono .message e .date -->
+                    <div v-for="message in contacts[indexContact].messages" v-bind:class="['text-message', message.status]">
+                        <p>{{ message.message }}</p>
+                        <span>{{ message.date }}</span>
+                    </div>
+                </div>
             </section>
 
             <!-- Writing text area -->
@@ -106,9 +121,12 @@
                 </div>
                 <a href="#"><i class="fas fa-microphone-alt"></i></a>
             </section>
+
         </main>
 
+
     </div>
+
 
     <!-- JS -->
     <script src="./js/script.js"></script>

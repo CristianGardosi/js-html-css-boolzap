@@ -56,6 +56,7 @@ i:hover {
     outline: 0;
     background: rgba(255,255,255, .7); 
     transition: background .2s;
+    border-bottom: 1px solid #bbbbbb;
 }
 
 .search-account:hover,
@@ -132,6 +133,7 @@ i:hover {
     flex-basis: 7%;
     background: #edeeec;
     text-align: center;
+    border-bottom: 1px solid #bbbbbb;
 }
 
 .text-input-bar i {
@@ -148,6 +150,7 @@ i:hover {
 /* Contact list */
 .contact-list {
     flex-grow: 1;
+    overflow-y: auto;
     background: #fff;
 }
 
@@ -156,7 +159,13 @@ i:hover {
     align-items: center;
     padding: 5px 0;
     border-bottom: 1px solid #bbbbbb;
+    cursor: pointer;
 }
+
+.contact-list ul li:hover,
+contact-focus {
+    background: #edeeec;
+} 
 
 .contact-list li:last-child {
     border-bottom: none;
@@ -188,11 +197,49 @@ i:hover {
 
 /* Message area */
 .main-message-area {
+    position: relative;
     flex-grow: 1;
     /* Gestione barra di scorrimento verticale qualora i messaggi superassero l'altezza di visione interna al container */
-    overflow-y: auto;
     background-image: url('../img/mine.jpg');
 }
+
+.chat-area {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 50px;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+  }
+  /* Gestione elementi all'interno della 'nuovoletta' */
+  .text-message {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 10px;
+    padding: 0 7px;
+    width: 45%;
+    min-height: 55px;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  /* Gestione propria dei messagi inviati, utilizzando align-self per non intaccare gli altri e un background proprio */
+  .sent {
+    align-self: flex-end;
+    background-color: #cbfbb3;
+  }
+  
+  .text-message p {
+    font-size: 13px;
+  }
+  
+  .text-message span {
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    font-size: 7px;
+    color: #b5b9bb;
+  }
 
 /* Insert text area */
 .main-footer {
