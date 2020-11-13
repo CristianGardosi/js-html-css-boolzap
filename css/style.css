@@ -86,8 +86,8 @@ i:hover {
 
 /* User info area */
 /* User info & main header hanno alcune caratteristiche in comune che raccolgo qua per assicurarmi coerenza stilistica tra i due e ottimizzare il dispendio di codice */
-.user-info,
-.main-header {
+.sidebar .user-info,
+.main-content-message .main-header {
     flex-basis: 10%;
     display: flex;
     justify-content: space-between;
@@ -96,25 +96,25 @@ i:hover {
     background :#edeeec;
 }
 
-.user-info {
+.sidebar .user-info {
     border-right: 1px solid #bbbbbb;
 }
 
 
-.user-bio {
+.sidebar .user-info .user-bio {
     display: flex;
     align-items: center;
 }
 
 /* Notification settings area */
-.notification-setting {
+.sidebar .notification-setting {
     flex-basis: 15%;
     display: flex;
     align-items: center;
     background: #92dcf7;
 }
 
-.notification-setting i{
+.sidebar .notification-setting i{
     color: #92dcf7;
     background-color: #fff;
     border-radius: 100%;
@@ -123,24 +123,24 @@ i:hover {
     margin-right: 10px;
 }
 
-.notification-info a {
+.sidebar .notification-setting .notification-info a {
     font-size: 12px;
     color: #868686;
 }
 
 /* Searchbar area */
-.sidebar-searchbar {
+.sidebar .sidebar-searchbar {
     flex-basis: 7%;
     background: #edeeec;
     text-align: center;
     border-bottom: 1px solid #bbbbbb;
 }
 
-.text-input-bar i {
+.sidebar .sidebar-searchbar .text-input-bar i {
     font-size: 15px;
 }
 
-.search-account {
+.text-input-bar .search-account {
     width: 85%;
     height: 35px;
     margin: 10px;
@@ -148,13 +148,13 @@ i:hover {
 }
 
 /* Contact list */
-.contact-list {
+.sidebar .contact-list {
     flex-grow: 1;
     overflow-y: auto;
     background: #fff;
 }
 
-.contact-list ul li {
+.sidebar .contact-list ul li {
     display: flex;
     align-items: center;
     padding: 5px 0;
@@ -162,12 +162,12 @@ i:hover {
     cursor: pointer;
 }
 
-.contact-list ul li:hover,
+.sidebar .contact-list ul li:hover,
 contact-focus {
     background: #edeeec;
 } 
 
-.contact-list li:last-child {
+.sidebar.contact-list li:last-child {
     border-bottom: none;
 }
 
@@ -181,17 +181,17 @@ contact-focus {
 }
 
 /* Main header */
-.contact-bio {
+.main-header .contact-bio {
     display: flex;
     align-items: center;
 }
 
-.name-access span {
+.main-header .contact-bio .name-access span {
     font-size: 10px;
     color: #868686;
 }
 
-.header-icons i {
+.main-header .header-icons i {
     padding: 0 5px;
 }
 
@@ -203,16 +203,16 @@ contact-focus {
     background-image: url('../img/mine.jpg');
 }
 
-.chat-area {
+.main-message-area .chat-area {
     display: flex;
     flex-direction: column;
     padding: 20px 50px;
     height: 100%;
     width: 100%;
     overflow-y: auto;
-  }
-  /* Gestione elementi all'interno della 'nuovoletta' */
-  .text-message {
+}
+  /* Gestione elementi all'interno della 'nuvoletta' */
+.text-message {
     display: flex;
     align-items: center;
     position: relative;
@@ -222,24 +222,24 @@ contact-focus {
     min-height: 55px;
     border-radius: 10px;
     background-color: #fff;
-  }
+}
   /* Gestione propria dei messagi inviati, utilizzando align-self per non intaccare gli altri e un background proprio */
-  .sent {
+.sent {
     align-self: flex-end;
     background-color: #cbfbb3;
-  }
+}
   
-  .text-message p {
+.text-message p {
     font-size: 13px;
-  }
+}
   
-  .text-message span {
+.text-message span {
     position: absolute;
     right: 3px;
     bottom: 3px;
     font-size: 7px;
     color: #b5b9bb;
-  }
+}
 
 /* Insert text area */
 .main-footer {

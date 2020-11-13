@@ -66,7 +66,7 @@
             <section class="contact-list">
                 <ul>
                     <!-- Itero con v-for sui contatti (contacts) per strapolarne valore ed index, associo la funzione @click ai contatti nella lista che assegna alla mia variabile inizialmente vuota indexContact (nei data di Vue) il valore di index del contatto di volta in volta cliccato -->
-                    <li v-for="(contact, index) in contacts" @click= setIndex(index)>
+                    <li v-for="(contact, index) in contacts" @click= selectedChat(index)>
                         <!-- Sintassi 2 (interpolazione di stringhe) per collegare src al valore che mi serve all'interno del mio array -->
                         <img class="contact-img" 
                         v-bind:src= " `./img/avatar${contact.avatar}.jpg` " 

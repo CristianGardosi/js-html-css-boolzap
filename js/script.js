@@ -118,12 +118,29 @@ var app = new Vue({
                     }
                 ],
             },
+            {
+                name: 'Peach',
+                avatar: '_6',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Come si chiama il ristorante che mi dicevi',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'La rotonda sul Pane di San Giovanni',
+                        status: 'received'
+                    }
+                ],
+            },
         ]
     },
 
     methods: {
         // Funzione per associare alla variabile indexContact l'index effettivo degli elementi dell'array
-        setIndex(index) {
+        selectedChat(index) {
             this.indexContact = index;
         },
 
