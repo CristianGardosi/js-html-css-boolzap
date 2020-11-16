@@ -1,4 +1,4 @@
-/* GENERAL STYLES */
+/* !GENERAL STYLES */
 
 * {
     box-sizing: border-box;
@@ -24,7 +24,7 @@ body {
 }
 
 
-/* UTILITY CLASSES */
+/* !UTILITY CLASSES */
 
 /* Typhography */
 p {
@@ -65,7 +65,7 @@ i:hover {
 }
 
 
-/* LAYOUT APP */
+/* !LAYOUT APP */
 
 /* Container intera app */
 .app-container {
@@ -76,7 +76,8 @@ i:hover {
     min-width: 900px;
 }
 
-/* SIDEBAR */
+/* *SIDEBAR* */
+
 .sidebar {
     flex-basis: 40%;
     display: flex;
@@ -175,7 +176,8 @@ i:hover {
 }
 
 
-/* MAIN MESSAGE AREA */
+/* *MAIN MESSAGE AREA* */
+
 .main-content-message {
     flex-basis: 60%;
     display: flex;
@@ -214,7 +216,7 @@ i:hover {
     width: 100%;
     overflow-y: auto;
 }
-  /* Gestione elementi all'interno della 'nuovoletta' */
+  /* Gestione elementi all'interno della 'nuovoletta' in comune tra sent e received */
 .text-message {
     display: flex;
     align-items: center;
@@ -224,14 +226,8 @@ i:hover {
     width: 45%;
     min-height: 55px;
     border-radius: 10px;
-    background-color: #fff;
 }
-  /* Gestione propria dei messagi inviati, utilizzando align-self per non intaccare gli altri e un background proprio */
-.sent {
-    align-self: flex-end;
-    background-color: #cbfbb3;
-}
-  
+
 .text-message p {
     font-size: 13px;
 }
@@ -243,7 +239,16 @@ i:hover {
     font-size: 7px;
     color: #b5b9bb;
 }
-
+/* Gestione propria dei messagi ricevuti, utilizzando align-self per non intaccare gli altri e un background proprio */
+.received {
+    background-color: #fff;
+}
+/* Gestione propria dei messagi inviati, utilizzando align-self per non intaccare gli altri e un background proprio */
+.sent {
+    align-self: flex-end;
+    background-color: #cbfbb3;
+}
+  
 /* Insert text area */
 .main-footer {
     flex-basis: 10%;

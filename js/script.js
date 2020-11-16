@@ -19,8 +19,6 @@ var app = new Vue({
             avatar: '_io'
         },
 
-        indexContact: 0,
-
         // Elenco contatti
         contacts: [
             {
@@ -135,13 +133,16 @@ var app = new Vue({
                     }
                 ],
             }
-        ]
+        ],
+
+         // Variabile utilizzata nei punti in cui mi serve sapere qual'è il contatto attivo tra quelli nella lista contatti di sx (in base al suo index). Dinamicamente in base a quale contatto viene cliccato di volta in volta dall'utente questa variabile cambia e si associa allo specifico click
+         indexActiveContact: 0
     },
 
     methods: {
-        // Funzione per associare alla variabile indexContact l'index effettivo degli elementi dell'array
+        // Funzione per associare alla variabile indexActiveContact l'index effettivo dei contatti in base alla loro posizione nell'array 
         selectedChat(index) {
-            this.indexContact = index;
+            this.indexActiveContact = index;
         },
 
     }
