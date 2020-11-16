@@ -150,7 +150,7 @@ var app = new Vue({
 
         // Funzione per pushare un nuovo messaggio nella chat al @keyup su enter che equivale all'invio. Sto dicendo: "A patto che le condizioni poste vengono rispettate, pusha nel mio array contacts e più precisamente nel 'sotto-array' messages, all'indice corrispondente alla chat selezionata in quel preciso momento i valori di date che grazie a DAYJS sono riportati in tempo reale, il nuovo message che con v-model ho collegato alla mia barra input text e lo stato di sent perchè è inviato da parte dell'utente
         sendMessage() {
-            if(this.newMessage.trim() !== '') {
+            if (this.newMessage.trim() !== '') {
                 this.contacts[this.indexActiveContact].messages.push({
                     // Sintassi di DAYJS per la scrittura della data in formato giorno/mese/anno ora/minuti/secondi
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),

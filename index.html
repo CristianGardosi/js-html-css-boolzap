@@ -76,10 +76,10 @@
             <!-- Contact list -->
             <section class="contact-list">
                 <ul>
-                    <!-- Itero con v-for sui contatti (contacts) per strapolarne valore ed index, associo la funzione @click ai contatti nella lista che assegna alla mia variabile inizialmente vuota indexContact (nei data di Vue) il valore di index del contatto di volta in volta cliccato. Con l'utilizzo dell'operatore ternario setto la condizione 'quando index è uguale a indexContact applica la classe active all'elemento, altrimenti no' -->
+                    <!-- Itero con v-for sui contatti (contacts) per strapolarne valore ed index, associo la funzione @click ai contatti nella lista che assegna alla mia variabile inizialmente vuota indexActiveContact (nei data di Vue) il valore di index del contatto di volta in volta cliccato. Con l'utilizzo dell'operatore ternario setto la condizione 'quando index è uguale a indexContact applica la classe active all'elemento, altrimenti no' -->
                     <li v-for="(contact, index) in contacts" @click= selectedChat(index) 
-                    v-bind:class=" index == indexActiveContact ? 'active' : '' ">
-                        <!-- Sintassi 2 (interpolazione di stringhe) per collegare src al valore che mi serve all'interno del mio array -->
+                    v-bind:class=" index === indexActiveContact ? 'active' : '' ">
+                        <!-- Sintassi 2 (interpolazione di stringhe introdotta da ES6 e che utilizzerò per tutto il resto della creazione della mia web app) per collegare src al valore che mi serve all'interno del mio array -->
                         <img class="contact-img" 
                         v-bind:src= " `./img/avatar${contact.avatar}.jpg` " 
                         alt=""> 
