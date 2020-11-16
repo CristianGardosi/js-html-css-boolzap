@@ -213,15 +213,14 @@ i:hover {
     display: flex;
     flex-direction: column;
     padding: 20px 50px;
-    height: 100%;
-    width: 100%;
 }
+
   /* Gestione elementi all'interno della 'nuovoletta' in comune tra sent e received */
 .text-message {
     display: flex;
     align-items: center;
     position: relative;
-    margin: 10px;
+    margin: 10px 10px;
     padding: 0 7px;
     width: 45%;
     min-height: 55px;

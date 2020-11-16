@@ -101,7 +101,7 @@
             <!-- Contact name and info area -->
             <section class="main-header">
                 <div class="contact-bio">
-                    <!-- Per fare in modo di avere l'immagine ed il nome dell'account che di volta in volta clicco dalla mia lista contatti, utilizzo una sintassi di interpolazione in cui la parte dinamica è data dalla variabile indexContact che si aggiorna ad ogni click su un utente diverso .avatar quando voglio la foto e .name quando invece voglio l'username del contatto -->
+                    <!-- Per fare in modo di avere l'immagine ed il nome dell'account che di volta in volta clicco dalla mia lista contatti, utilizzo una sintassi di interpolazione in cui la parte dinamica è data dalla variabile indexActiveContact che si aggiorna ad ogni click su un utente diverso (.avatar quando voglio la foto e .name quando invece voglio l'username del contatto) -->
                     <img class="contact-img" 
                     v-bind:src="`./img/avatar${contacts[indexActiveContact].avatar}.jpg`" 
                     alt="user avatar"> 
@@ -130,7 +130,9 @@
                     <!-- Similarmente a come fatto quando volevo inserire foto/nome dell'user nella main-header in alto, itero sui messagge all'interno di contacts tenendo sempre conto della variabile indexContact in modo che ad ogni utente corrispondano solo e soltanto la sua chat specifica, richiamo poi i valori che mi servono .message e .date -->
                     <div v-for="message in contacts[indexActiveContact].messages" 
                     v-bind:class="['text-message', message.status]">
+                        <!-- Testo del messaggio -->
                         <p>{{ message.message }}</p>
+                        <!-- Data e ora di invio/ricezione messaggio  -->
                         <span>{{ message.date }}</span>
                     </div>
                 </div>

@@ -173,7 +173,7 @@ var app = new Vue({
                     status: 'received'
                 });
             }, 1000);
-        },
+        }
 
     }
 
