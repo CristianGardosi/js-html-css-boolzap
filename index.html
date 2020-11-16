@@ -141,8 +141,13 @@
                 <a href="#">
                     <i class="far fa-smile-wink"></i>
                 </a>
+                <!-- Con v-model 'bindo' il mio input alla classe dinamica newMessage popolata di volta in volta dai nuovi messaggi che l'utente scrive e con il click su enter invia -->
                 <div class="text-input-bar">
-                    <input type="text" class="text-bar" placeholder="Scrivi un messaggio">
+                    <input 
+                    v-model="newMessage" 
+                    @keyup.enter="sendMessage" 
+                    type="text" 
+                    class="text-bar" placeholder="Scrivi un messaggio">
                 </div>
                 <a href="#">
                     <i class="fas fa-microphone-alt"></i>
@@ -154,6 +159,11 @@
 
     </div>
 
+
+
+
+    <!-- DAYJS per la gestione della data e ora dinamica sui nuovi messaggi -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.6/dayjs.min.js"></script>
 
     <!-- JS -->
     <script src="./js/script.js"></script>

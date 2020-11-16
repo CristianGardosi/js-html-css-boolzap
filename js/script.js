@@ -136,13 +136,43 @@ var app = new Vue({
         ],
 
          // Variabile utilizzata nei punti in cui mi serve sapere qual'è il contatto attivo tra quelli nella lista contatti di sx (in base al suo index). Dinamicamente in base a quale contatto viene cliccato di volta in volta dall'utente questa variabile cambia e si associa allo specifico click
-         indexActiveContact: 0
+         indexActiveContact: 0,
+
+        //  Variabile dinamica utilizzata per pushare nuovi messaggi contenenti testo tramite il @keyup di enter aventi le medesime caratteristiche dei messaggi preimpostati e già presenti nell'array
+        newMessage: '',
     },
 
     methods: {
         // Funzione per associare alla variabile indexActiveContact l'index effettivo dei contatti in base alla loro posizione nell'array 
         selectedChat(index) {
             this.indexActiveContact = index;
+        },
+
+        // Funzione per pushare un nuovo messaggio nella chat al @keyup su enter che equivale all'invio. Sto dicendo: "A patto che le condizioni poste vengono rispettate, pusha nel mio array contacts e più precisamente nel 'sotto-array' messages, all'indice corrispondente alla chat selezionata in quel preciso momento i valori di date che grazie a DAYJS sono riportati in tempo reale, il nuovo message che con v-model ho collegato alla mia barra input text e lo stato di sent perchè è inviato da parte dell'utente
+        sendMessage() {
+            if(this.newMessage.trim() !== '') {
+                this.contacts[this.indexActiveContact].messages.push({
+                    // Sintassi di DAYJS per la scrittura della data in formato giorno/mese/anno ora/minuti/secondi
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    message: this.newMessage,
+                    status: 'sent'
+                });
+                // Pulisco il mio input text al momento dell'invio
+                this.newMessage = '';
+                // Al termine di questa funzione faccio 'scattare' il countdown di un secondo che mi separa dalla comparsa su schermo di replyAfer1Sec
+                this.replyAfter1Sec();
+            }
+        },
+
+        // Funzione di autorisposta automatica all'invio di un messaggio da parte dell'utente. Con setTimeout la posiziono un secondo esatto dopo l'invio del suddetto messaggio ed esattamente come ho fatto per sendMessage vado a settarne i valori con un pattern identico
+        replyAfter1Sec() {
+            setTimeout(() => {
+                this.contacts[this.indexActiveContact].messages.push({
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    message: 'Ok di autorisposta dopo 1 secondo',
+                    status: 'received'
+                });
+            }, 1000);
         },
 
     }

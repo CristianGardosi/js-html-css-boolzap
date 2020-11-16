@@ -204,6 +204,7 @@ i:hover {
 .main-message-area {
     position: relative;
     flex-grow: 1;
+    overflow-y: auto;
     /* Gestione barra di scorrimento verticale qualora i messaggi superassero l'altezza di visione interna al container */
     background-image: url('../img/mine.jpg');
 }
@@ -214,7 +215,6 @@ i:hover {
     padding: 20px 50px;
     height: 100%;
     width: 100%;
-    overflow-y: auto;
 }
   /* Gestione elementi all'interno della 'nuovoletta' in comune tra sent e received */
 .text-message {
