@@ -69,16 +69,24 @@
                     <a href="#">
                         <i class="fas fa-search search-chat"></i>
                     </a>
-                    <input type="text" class="search-account" placeholder="Cerca o inizia una nuova chat">
+                    <!-- Utlizzo @keyup e v-model per gestire il filtraggio dei contatti quando l'utente inserisce caratteri nella search bar posta sopra la lista, ho creato una funzione ad hoc nella sezione methods -->
+                    <input 
+                    @keyup="searchChat"
+                    v-model="searchContact"
+                    type="text" 
+                    class="search-account" placeholder="Cerca o inizia una nuova chat">
                 </div>
             </section>
 
             <!-- Contact list -->
             <section class="contact-list">
                 <ul>
-                    <!-- Itero con v-for sui contatti (contacts) per strapolarne valore ed index, associo la funzione @click ai contatti nella lista che assegna alla mia variabile inizialmente vuota indexActiveContact (nei data di Vue) il valore di index del contatto di volta in volta cliccato. Con l'utilizzo dell'operatore ternario setto la condizione 'quando index è uguale a indexContact applica la classe active all'elemento, altrimenti no' -->
-                    <li v-for="(contact, index) in contacts" @click= selectedChat(index) 
-                    v-bind:class=" index === indexActiveContact ? 'active' : '' ">
+                    <!-- Itero con v-for sui contatti (contacts) per strapolarne valore ed index, associo la funzione @click ai contatti nella lista che assegna alla mia variabile inizialmente vuota indexActiveContact (nei data di Vue) il valore di index del contatto di volta in volta cliccato. Con l'utilizzo dell'operatore ternario setto la condizione 'quando index è uguale a indexContact applica la classe active all'elemento, altrimenti no'. Utilizzo poi v-show che ho impostato nella funzione searchChat che gestisce il filtraggio delle chat quando l'utente inserisce dei caratteri nella search bar posta sopra la lista contatti -->
+                    <li 
+                    v-for="(contact, index) in contacts" 
+                    @click= selectedChat(index) 
+                    v-bind:class=" index === indexActiveContact ? 'active' : '' "
+                    v-show="contact.visible">
                         <!-- Sintassi 2 (interpolazione di stringhe introdotta da ES6 e che utilizzerò per tutto il resto della creazione della mia web app) per collegare src al valore che mi serve all'interno del mio array -->
                         <img class="contact-img" 
                         v-bind:src= " `./img/avatar${contact.avatar}.jpg` " 
@@ -107,7 +115,7 @@
                     alt="user avatar"> 
                     <div class="name-access">
                         <p>{{ contacts[indexActiveContact].name }}</p>
-                        <span>Ultimo accesso alle ore 04:20</span>
+                        <span>Ultimo accesso oggi alle ore {{contacts[indexActiveContact].lastAccess}}</span>
                     </div>
                 </div>
                 <div class="header-icons">
@@ -149,7 +157,8 @@
                     v-model="newMessage" 
                     @keyup.enter="sendMessage" 
                     type="text" 
-                    class="text-bar" placeholder="Scrivi un messaggio">
+                    class="text-bar" 
+                    placeholder="Scrivi un messaggio">
                 </div>
                 <a href="#">
                     <i class="fas fa-microphone-alt"></i>
@@ -160,8 +169,6 @@
 
 
     </div>
-
-
 
 
     <!-- DAYJS per la gestione della data e ora dinamica sui nuovi messaggi -->
